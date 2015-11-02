@@ -39,7 +39,7 @@
     var appid=GetQueryString("appid")
     var keyword=GetQueryString("keyword")
 
-    
+
     function GetQueryString(name){
         var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
         var r = window.location.search.substr(1).match(reg);
