@@ -232,7 +232,7 @@ function searchlist(event){
     if(event.keyCode==13) {
         var txt=document.getElementById("key").value
        //alert("searchlist=="+txt)
-        showsearchlist(txt)
+        showsearchlist(txt,1,20)
     }
 
 }
@@ -270,14 +270,18 @@ function showsearchkeyword(){
      })
 }
 //显示搜索结果列表
-function showsearchlist(key){
+function showsearchlist(key,pageNo,pageSize){
     //alert("showsearchlist=="+key)
     $.ajax({
         type: "POST",
         url:"api/search.json",
         dataType:"json",
         contentType: "application/json",
+        beforeSend:function(){
+            $('.ajax_loading').show() //显示加载时候的提示
+        },
         success : function(data){
+        $('.ajax_loading').hide() //请求成功,隐藏加载提示
             //alert("success")
             document.getElementById("keywordlist").innerHTML=""
             var obj=document.getElementById("applist")
@@ -288,7 +292,7 @@ function showsearchlist(key){
                 objul.id=data.data.datalist[i].id
                 //跳转至详情页
                 objul.onclick=function(){location=encodeURI('details.html?pageid=4&listid=0&appid='+this.id+'&keyword='+key)}
-                objul.innerHTML="<li class='appico'><img src='"+data.data.datalist[i].ico+"'></li><li class='apptxt'><div class='app-title'>"+data.data.datalist[i].name+"</div><div class='app-category'>"+data.data.datalist[i].category+"</div></li><li class='appbtn'><span class='dbtn' id="+data.data.datalist[i].url+" onclick=download(this,event)>下载</span></li>"
+                objul.innerHTML="<li class='appico'><img src='"+data.data.datalist[i].ico+"'></li><li class='apptxt'><div class='app-title'>"+data.data.datalist[i].title+"</div><div class='app-category'>"+data.data.datalist[i].category+"</div></li><li class='appbtn'><span class='dbtn' id="+data.data.datalist[i].url+" onclick=download(this,event)>下载</span></li>"
                 obj.appendChild(objul)
             }
         },

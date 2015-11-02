@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="css/idangerous.swiper.3dflow.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/appstore.css">
-    <script src="js/jquery-1.10.1.min.js"></script>
-    <script src="js/focus-js/TouchSlide.1.1.js"></script>
 </head>
 <body>
 <div class="searchbar" id="searchbar">
@@ -17,6 +15,7 @@
 </div>
 <div class="mainwidth" id="keywordlist"></div>
 <div class="applist" id="applist"></div>
+<div class='ajax_loading' style='height:60px;width:100%;text-align:center;line-height:60px;font-size:14px;display:none;bottom:0px'>正在加载…</div>
 <div class="pagebottom"></div>
 <div id="nav" class="nav">
     <li class="" onclick="window.location.href='index.html'">首页</li>
@@ -28,17 +27,10 @@
 <script src="js/json.js"></script>
 <script>
     var keyword=GetQueryString("keyword")
-    function GetQueryString(name){
-        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-        var r = window.location.search.substr(1).match(reg);
-        if(r!=null)return  decodeURI(r[2]); return null;
-    }
+
     if (keyword==null){
-        showsearchbar('a')
+        showsearchbar('请输入搜索关键字')
         showsearchkeyword()
-    }else{
-        showsearchbar(keyword)
-        showsearchlist(keyword)
         var page_num=1;
           $(document).ready(function(){
             $(window).scroll(function(){
@@ -46,12 +38,31 @@
                 var div1tem = $('#container').height()
                 var str =''
                 page_num=page_num+1;
-                showAppList(pageid,listid,page_num,20)
+                showsearchlist(keyword,page_num,20)
               }
             })
           })
-    }
+    }else{
+        var page_num=1;
+          $(document).ready(function(){
+            $(window).scroll(function(){
+              if($(document).scrollTop()>=$(document).height()-$(window).height()){
+                var div1tem = $('#container').height()
+                var str =''
+                page_num=page_num+1;
+                showsearchlist(keyword,page_num,20)
+              }
+            })
+          })
+        showsearchbar(keyword)
+        showsearchlist(keyword,1,20)
 
+    }
+function GetQueryString(name){
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r!=null)return  decodeURI(r[2]); return null;
+    }
 
 </script>
 <!-- Don't forget to get the latest Swiper and scrollbar version here-->
