@@ -29,6 +29,5 @@ $(function(){
 			offsetPxAfter:10
 		})	
 	})
-
 })
 

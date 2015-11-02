@@ -3,40 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1">
-    <title>Appsky-APP HOME</title>
+    <title>Appsky-APP Details</title>
     <link rel="stylesheet" href="css/idangerous.swiper.css">
     <link rel="stylesheet" href="css/idangerous.swiper.3dflow.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/appstore.css">
-    <script src="js/focus-js/TouchSlide.1.1.js"></script>
-    <script src="js/jquery-1.10.1.min.js"></script>
 </head>
 <body>
 
-<div id="content">
-    <div id="slideBox" class="slideBox">
-        <div class="bd" id="bdbox">
-            <ul id="Focusad">
-
-            </ul>
-        </div>
-
-        <div class="hd">
-            <ul></ul>
-        </div>
-    </div>
-</div>
-
-<!--focus AD 结束-->
-<div id="ph"></div>
-
-<div class="listtitle">
-    分类
-</div>
-<div class="listli" id="listli">
+<div class="topnav" id="topnav">
 
 </div>
+<div class="applist" id="applist">
+    <ul class="appul" id="apptxt">
 
+    </ul>
+    <ul class="appul1" id="appimg">
+
+    </ul>
+    <ul class="appul" id="appinfo">
+    </ul>
+</div>
 <div class="pagebottom"></div>
 <div id="nav" class="nav">
     <li class="" onclick="window.location.href='index.html'">首页</li>
@@ -47,12 +34,28 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/json.js"></script>
 <script>
-	 showFocusAd(6,'Focusad')
-	 showRecommend(2,'1','ph')
-	 showAppCategory(2,1)
+    var pageid=GetQueryString("pageid")
+    var listid=GetQueryString("listid")
+    var appid=GetQueryString("appid")
+    var keyword=GetQueryString("keyword")
 
+    alert("detailsweb="+keyword)
+    function GetQueryString(name){
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r!=null)return  decodeURI(r[2]); return null;
+    }
+    if (appid==""){
+        //alert("null")
+        goweb(1)
+    }else{
+       //alert("show"+listid)
+        showdetails(pageid,listid,appid,keyword)
+    }
+</script>
+<script>
 
-			</script>
+</script>
 <!-- Don't forget to get the latest Swiper and scrollbar version here-->
 <script src="js/idangerous.swiper-2.0.min.js"></script>
 <script src="js/idangerous.swiper.3dflow-2.0.js"></script>
