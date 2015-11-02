@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>Appsky-APP LIST</title>
+    <link rel="stylesheet" href="css/idangerous.swiper.css">
+    <link rel="stylesheet" href="css/idangerous.swiper.3dflow.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/appstore.css">
+</head>
+<body>
+<script>
+
+</script>
+<div class="topnav" id="nav">
+
+</div>
+<div id="thelist">
+
+</div>
+<div class='ajax_loading' style='height:60px;width:100%;text-align:center;line-height:60px;font-size:14px;display:none;bottom:0px'>正在加载…</div>
+<div class="pagebottom"></div>
+<div id="nav" class="nav">
+    <li class="" onclick="window.location.href='index.html'">首页</li>
+    <li class="title1" onclick="window.location.href='apphome.html'">应用</li>
+    <li class="" onclick="window.location.href='gamehome.html'">游戏</li>
+    <li class="" onclick="window.location.href='search.html'">搜索</li>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/json.js"></script>
+<script>
+    var type=GetQueryString("type")
+    var urltype=GetQueryString("urltype")
+
+    if(type=="rec"){
+        var page_num=1;
+          $(document).ready(function(){
+            $(window).scroll(function(){
+              if($(document).scrollTop()>=$(document).height()-$(window).height()){
+                var div1tem = $('#container').height()
+                var str =''
+                page_num=page_num+1;
+                RecommendList(1,1,page_num,20)
+              }
+            })
+          })
+        RecommendNav(urltype,1)
+        RecommendList(1,page_num,20)
+    }else if(type=="list"){
+        var page_num=1;
+          $(document).ready(function(){
+            $(window).scroll(function(){
+              if($(document).scrollTop()>=$(document).height()-$(window).height()){
+                var div1tem = $('#container').height()
+                var str =''
+                page_num=page_num+1;
+                AppList(1,1,page_num,20)
+              }
+            })
+          })
+        AppNav(urltype,1)
+        AppList(1,page_num,20)
+    }
+    function GetQueryString(name){
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r!=null)return  unescape(r[2]); return null;
+    }
+</script>
+
+<!-- Don't forget to get the latest Swiper and scrollbar version here-->
+<script src="js/idangerous.swiper-2.0.min.js"></script>
+<script src="js/idangerous.swiper.3dflow-2.0.js"></script>
+<script src="js/appstore.js"></script>
+</body>
+</html>

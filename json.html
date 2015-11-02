@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <meta charset="UTF-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <title>JSON LIST</title>
+    <style>
+        h2 {
+        font-size: 24px;
+        border-bottom: 1px solid #CCC;
+        color: #000;
+        }
+        h1, h2, h3, h4, h5, h6 {
+        margin: 20px 0px 10px;
+        padding: 0px;
+        font-weight: bold;
+        cursor: text;
+        position: relative;
+        }
+        pre {
+        background-color: #F8F8F8;
+        border: 1px solid #CCC;
+        font-size: 13px;
+        line-height: 19px;
+        overflow: auto;
+        padding: 6px 10px;
+        border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <H2 class="t">接口列表</H2>
+    <h3 class="t1">1.排行 recommend</h3>
+    <pre>GET http://lencn.com/appsky/api/recommend.asp?type=XX
+type=1 最新应用, type=2 热门应用, type=3 精品推荐, type=4 最新游戏, type=5 热门游戏, type=6 编辑选荐
+    {
+        "code": 200,
+        "message": "success",
+        "data": {
+            "reid":1,
+            "name":"最新应用",
+            "datalist": [
+            {
+                "id":1,
+                "name":"优酷电视剧",
+                "ico":"http://lencn.com/appsky/img/thumbs/1.jpg",
+                "describe":"最全最新最好看的电视剧"
+            },
+            {
+                "id":2,
+                "name":"听听FM",
+                "ico":"http://lencn.com/appsky/img/thumbs/2.jpg",
+                "describe":"优质广播电台"
+            }],
+            "page":
+            {
+                "pageNo": "1",
+                "totalPage": "10",
+                "pageSize": "5"
+            }
+        }
+    }
+    </pre>
+    <h3 class="t1">2.广告 ad</h3>
+    <pre>GET http://lencn.com/appsky/api/ad.asp?id=XX
+id=1 首页焦点图, id=2 首页精品应用推荐位, id=3 首页精品游戏推荐位, id=4 应用频道焦点图, id=5 游戏频道焦点图
+    {
+        "code": 200,
+        "message": "success",
+        "data": {
+            "id":1,
+            "name":"首页焦点图",
+            "datalist": [
+            {
+                "num":1,
+                "txt":"中秋好团圆",
+                "img":"http://lencn.com/appsky/img/ad01.jpg",
+                "url":"http://lencn.com/appsky/api/details.asp?id=101"
+            },
+            {
+                "num":2,
+                "txt":"大白拯救世界",
+                "img":"http://lencn.com/appsky/img/ad02.jpg",
+                "url":"http://lencn.com/appsky/api/details.asp?id=102"
+            }],
+            "page":
+            {
+                "pageNo": "1",
+                "totalPage": "10",
+                "pageSize": "5"
+            }
+        }
+    }
+    </pre>
+    <h3 class="t1">3.搜索结果 search</h3>
+    <pre>GET http://lencn.com/appsky/api/search.asp?keyword=XX
+    {
+        "code": 200,
+        "message": "success",
+        "data": {
+            "keyWord":"大白",
+            "datalist": [
+            {
+                "id":1,
+                "name":"大白战机",
+                "ico":"http://lencn.com/appsky/img/thumbs/1.jpg",
+                "describe":"大白拯救地球"
+            },
+            {
+                "num":2,
+                "txt":"拯救世界",
+                "ico":"http://lencn.com/appsky/img/thumbs/2.jpg",
+                "describe":"拯救地球,拯救地球"
+            }],
+            "page":
+            {
+                "pageNo": "1",
+                "totalPage": "10",
+                "pageSize": "5"
+            }
+        }
+    }
+    </pre>
+    <h3 class="t1">4.搜索关键字 searchkeyword</h3>
+    <pre>GET http://lencn.com/appsky/api/searchkeyword.asp
+    {
+        "code": 200,
+        "message": "success",
+        "data": {
+            "datalist": [
+            {
+                "id":1,
+                "txt":"大白"
+            },
+            {
+                "id":2,
+                "txt":"全民消消乐"
+            },
+            {
+                "id":3,
+                "txt":"免税店"
+            },
+            {
+                "id":4,
+                "txt":"快乐大本营"
+            },
+            {
+                "id":5,
+                "txt":"网贷"
+            },
+            {
+                "id":6,
+                "txt":"纪念碑谷"
+            }]
+        }
+    }
+    </pre>
+    <h3 class="t1">5.分类 category</h3>
+    <pre>GET http://lencn.com/appsky/api/category.asp?id=XX
+id=1 应用分类, id=2 游戏分类
+    {
+        "code": 200,
+        "message": "success",
+        "data": {
+            "datalist": [
+            {
+                "id": "101",
+                "title": "聊天"
+            },
+            {
+                "id": "102",
+                "title": "社交"
+            },
+            {
+                "id": "103",
+                "title": "婚恋"
+            },
+            {
+                "id": "104",
+                "title": "通讯"
+            },
+            {
+                "id": "105",
+                "title": "音乐"
+            },
+            {
+                "id": "106",
+                "title": "视频"
+            },
+            {
+                "id": "107",
+                "title": "铃声"
+            }],
+            "page":
+            {
+                "pageNo": "1",
+                "totalPage": "10",
+                "pageSize": "5"
+            }
+        }
+    }
+    </pre>
+    <h3 class="t1">6.列表 list</h3>
+    <pre>GET http://lencn.com/appsky/api/list.asp?p=x &pc=x
+    {
+        "code": 200,
+        "message": "success",
+        "data": {
+            "categoryId":101,
+            "categoryName":"聊天",
+            "datalist": [
+            {
+                "id":1,
+                "name":"大白战机",
+                "ico":"http://lencn.com/appsky/img/thumbs/1.jpg",
+                "describe":"大白拯救地球"
+            },
+            {
+                "num":2,
+                "txt":"拯救世界",
+                "ico":"http://lencn.com/appsky/img/thumbs/2.jpg",
+                "describe":"拯救地球,拯救地球"
+            }],
+            "page":
+            {
+                "pageNo": "1",
+                "totalPage": "10",
+                "pageSize": "5"
+            }
+        }
+    }
+    </pre>
+    <h3 class="t1">7.应用详情 details</h3>
+    <pre>GET http://lencn.com/appsky/api/details.asp?id=XX
+    {
+        "code": 200,
+        "message": "success",
+        "data": {
+            "id":101,
+            "name":"微信",
+            "img":[
+                "http://lencn.com/appsky/img/1.jpg",
+                "http://lencn.com/appsky/img/2.jpg",
+                "http://lencn.com/appsky/img/3.jpg"
+            ],
+            "ico":[
+                "http://lencn.com/appsky/img/thumbs/1.jpg"
+            ],
+            "version":"V4.0.1",
+            "source":"BAIDU",
+            "describe":"社交神器"
+
+        }
+    }
+    </pre>
+</div>
+</body>
+</html>

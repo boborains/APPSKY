@@ -1,0 +1,87 @@
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "id":1,
+    "title":"首页焦点图",
+    "datalist": [
+      {
+        "num":1,
+        "txt":"中秋好团圆",
+        "img":"http://lencn.com/appsky/img/big/1.jpg",
+        "url":"http://lencn.com/appsky/api/details.asp?id=101"
+      },
+      {
+        "num":2,
+        "txt":"大白拯救世界",
+        "img":"http://lencn.com/appsky/img/big/2.jpg",
+        "url":"http://lencn.com/appsky/api/details.asp?id=102"
+      },
+      {
+        "num":3,
+        "txt":"大白拯救世界",
+        "img":"http://lencn.com/appsky/img/big/3.jpg",
+        "url":"http://lencn.com/appsky/api/details.asp?id=102"
+      },
+      {
+        "num":4,
+        "txt":"大白拯救世界",
+        "img":"http://lencn.com/appsky/img/big/1.jpg",
+        "url":"http://lencn.com/appsky/api/details.asp?id=102"
+      },
+      {
+        "num":5,
+        "txt":"大白拯救世界",
+        "img":"http://lencn.com/appsky/img/big/2.jpg",
+        "url":"http://lencn.com/appsky/api/details.asp?id=102"
+      },
+      {
+        "num":6,
+        "txt":"大白拯救世界",
+        "img":"http://lencn.com/appsky/img/big/1.jpg",
+        "url":"http://lencn.com/appsky/api/details.asp?id=102"
+      },
+      {
+        "num":7,
+        "txt":"大白拯救世界",
+        "img":"http://lencn.com/appsky/img/big/2.jpg",
+        "url":"http://lencn.com/appsky/api/details.asp?id=102"
+      },
+      {
+        "num":7,
+        "txt":"大白拯救世界",
+        "img":"http://lencn.com/appsky/img/big/2.jpg",
+        "url":"http://lencn.com/appsky/api/details.asp?id=102"
+      },
+      {
+        "num":7,
+        "txt":"大白拯救世界",
+        "img":"http://lencn.com/appsky/img/big/2.jpg",
+        "url":"http://lencn.com/appsky/api/details.asp?id=102"
+      },
+      {
+        "num":7,
+        "txt":"大白拯救世界",
+        "img":"http://lencn.com/appsky/img/big/2.jpg",
+        "url":"http://lencn.com/appsky/api/details.asp?id=102"
+      },
+      {
+        "num":7,
+        "txt":"大白拯救世界",
+        "img":"http://lencn.com/appsky/img/big/2.jpg",
+        "url":"http://lencn.com/appsky/api/details.asp?id=102"
+      },
+      {
+        "num":7,
+        "txt":"大白拯救世界",
+        "img":"http://lencn.com/appsky/img/big/2.jpg",
+        "url":"http://lencn.com/appsky/api/details.asp?id=102"
+      }],
+    "page":
+    {
+      "pageNo": "1",
+      "totalPage": "10",
+      "pageSize": "5"
+    }
+  }
+}

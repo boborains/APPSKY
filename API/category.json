@@ -1,0 +1,41 @@
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "datalist": [
+      {
+        "id": "101",
+        "title": "聊天"
+      },
+      {
+        "id": "102",
+        "title": "社交"
+      },
+      {
+        "id": "103",
+        "title": "婚恋"
+      },
+      {
+        "id": "104",
+        "title": "通讯"
+      },
+      {
+        "id": "105",
+        "title": "音乐"
+      },
+      {
+        "id": "106",
+        "title": "视频"
+      },
+      {
+        "id": "107",
+        "title": "铃声"
+      }],
+    "page":
+    {
+      "pageNo": "1",
+      "totalPage": "10",
+      "pageSize": "5"
+    }
+  }
+}
