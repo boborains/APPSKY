@@ -35,20 +35,31 @@
 
 </div>
 
+<div class='ajax_loading' id="loading"></div>
 <div class="pagebottom"></div>
-<div id="nav" class="nav">
-    <li class="" onclick="window.location.href='index.html'">首页</li>
-    <li class="" onclick="window.location.href='apphome.html'">应用</li>
-    <li class="title1" onclick="window.location.href='gamehome.html'">游戏</li>
-    <li class="" onclick="window.location.href='search.html'">搜索</li>
+<div id="menudiv" class="nav">
 </div>
 <script src="js/jquery.min.js"></script>
 <script src="js/json.js"></script>
 <script>
+var pageid=GetQueryString("pageid")
+    if (pageid==null){
+		pageid=3
+	}
+     showmenu(pageid)
 	 showFocusAd(6,'Focusad')
-	 showRecommend(3,'1','ph')//showRecommend(urltype,type,targetbox)
-	 showRecommend(3,'1','ph')//showRecommend(urltype,type,targetbox)
-	 showGameCategory(3,3)
+	 showRecommend(pageid,'1','ph')//showRecommend(urltype,type,targetbox)
+	 showRecommend(pageid,'1','ph')//showRecommend(urltype,type,targetbox)
+
+	 var page_num=1
+	 showGameCategory(pageid,page_num)
+
+     window.onscroll = function () {
+        if (getScrollTop() + getClientHeight() == getScrollHeight()) {
+            page_num=page_num+1;
+            showGameCategory(pageid,page_num)
+        }
+     }
 
 
 			</script>

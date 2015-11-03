@@ -15,53 +15,25 @@
 </div>
 <div class="mainwidth" id="keywordlist"></div>
 <div class="applist" id="applist"></div>
-<div class='ajax_loading' style='height:60px;width:100%;text-align:center;line-height:60px;font-size:14px;display:none;bottom:0px'>正在加载…</div>
+<div class='ajax_loading' id="loading"></div>
 <div class="pagebottom"></div>
-<div id="nav" class="nav">
-    <li class="" onclick="window.location.href='index.html'">首页</li>
-    <li class="" onclick="window.location.href='apphome.html'">应用</li>
-    <li class="" onclick="window.location.href='gamehome.html'">游戏</li>
-    <li class="title1" onclick="window.location.href='search.html'">搜索</li>
-</div>
+
+<div id="menudiv" class="nav"></div>
 <script src="js/jquery.min.js"></script>
 <script src="js/json.js"></script>
 <script>
     var keyword=GetQueryString("keyword")
-
+    var pageid=GetQueryString("pageid")
+    if (pageid==null){
+		pageid=4
+	}
+    showmenu(pageid)
     if (keyword==null){
         showsearchbar('请输入搜索关键字')
         showsearchkeyword()
-        var page_num=1;
-          $(document).ready(function(){
-            $(window).scroll(function(){
-              if($(document).scrollTop()>=$(document).height()-$(window).height()){
-                var div1tem = $('#container').height()
-                var str =''
-                page_num=page_num+1;
-                showsearchlist(keyword,page_num,20)
-              }
-            })
-          })
     }else{
-        var page_num=1;
-          $(document).ready(function(){
-            $(window).scroll(function(){
-              if($(document).scrollTop()>=$(document).height()-$(window).height()){
-                var div1tem = $('#container').height()
-                var str =''
-                page_num=page_num+1;
-                showsearchlist(keyword,page_num,20)
-              }
-            })
-          })
         showsearchbar(keyword)
-        showsearchlist(keyword,1,20)
-
-    }
-function GetQueryString(name){
-        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-        var r = window.location.search.substr(1).match(reg);
-        if(r!=null)return  decodeURI(r[2]); return null;
+        showsearchlist(keyword,1)
     }
 
 </script>

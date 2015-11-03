@@ -19,13 +19,11 @@
 <div id="thelist">
 
 </div>
-<div class='ajax_loading' style='height:60px;width:100%;text-align:center;line-height:60px;font-size:14px;display:none;bottom:0px'>正在加载…</div>
+<div class='ajax_loading' id="loading"></div>
 <div class="pagebottom"></div>
-<div id="nav" class="nav">
-    <li class="" onclick="window.location.href='index.html'">首页</li>
-    <li class="title1" onclick="window.location.href='apphome.html'">应用</li>
-    <li class="" onclick="window.location.href='gamehome.html'">游戏</li>
-    <li class="" onclick="window.location.href='search.html'">搜索</li>
+
+<div id="menudiv" class="nav">
+
 </div>
 <script src="js/jquery.min.js"></script>
 <script src="js/json.js"></script>
@@ -33,25 +31,20 @@
     var pageid=GetQueryString("pageid")
     var listid=GetQueryString("listid")
 
-        var page_num=1;
-          $(document).ready(function(){
-            $(window).scroll(function(){
-              if($(document).scrollTop()>=$(document).height()-$(window).height()){
-                var div1tem = $('#container').height()
-                var str =''
-                page_num=page_num+1;
-                showAppList(pageid,listid,page_num,20)
-              }
-            })
-          })
-        showNav(pageid,listid)
-        showAppList(pageid,listid,page_num,20)
+    showmenu(pageid)
+    showNav(pageid,listid)
 
-    function GetQueryString(name){
-        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-        var r = window.location.search.substr(1).match(reg);
-        if(r!=null)return  unescape(r[2]); return null;
+    var page_num=1;
+    showAppList(pageid,listid,page_num)
+    window.onscroll = function () {
+        if (getScrollTop() + getClientHeight() == getScrollHeight()) {
+           page_num=page_num+1;
+           showAppList(pageid,listid,page_num)
+        }
     }
+
+
+
 </script>
 
 <!-- Don't forget to get the latest Swiper and scrollbar version here-->

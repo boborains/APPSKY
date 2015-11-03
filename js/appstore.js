@@ -1,6 +1,6 @@
 $(function(){
 	//Featured Slide
-	var featuredSwiper = $('.featured').swiper({
+	/*var featuredSwiper = $('.featured').swiper({
 		slidesPerView:'auto',
 		centeredSlides: true,
 		initialSlide:7,
@@ -28,6 +28,6 @@ $(function(){
 			offsetPxBefore:25,
 			offsetPxAfter:10
 		})	
-	})
+	})*/
 })
 

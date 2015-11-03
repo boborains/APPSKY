@@ -1,33 +1,48 @@
+/*
 var recommendjson="api/recommend.json"
 var adjson="api/ad.json"
 var categoryjson="api/category.json"
 var listjson="api/list.json"
 var detailsjson="api/details.json"
+var searchkeyword="api/searchkeyword.json"
+var search="api/search.json"
+*/
+
+var recommendjson="http://lencn.com/appsky/api/asp/recommend.asp"
+var adjson="http://lencn.com/appsky/api/asp/ad.asp"
+var categoryjson="http://lencn.com/appsky/api/asp/category.asp"
+var listjson="http://lencn.com/appsky/api/asp/list.asp"
+var detailsjson="http://lencn.com/appsky/api/asp/details.asp"
+var searchkeyword="http://lencn.com/appsky/api/asp/searchkeyword.asp"
+var search="http://lencn.com/appsky/api/asp/search.asp"
+
+
+
 //转至各频道页
 function goweb(id){
     switch(id){
     case 1:
-    location='index.html'
+    location='index.html?pageid='+id
     break;
     case 2:
-    location='apphome.html'
+    location='apphome.html?pageid='+id
     break;
     case 3:
-    location='gamehome.html'
+    location='gamehome.html?pageid='+id
     break;
     case 4:
-    location='search.html'
+    location='search.html?pageid='+id
     break;
     }
 }
 
 //show app list
-function goAppList(pageid,listid,pageNo,pageSize){
-    location='list.html?pageid='+pageid+"&listid="+listid+"&pageNo="+pageNo+"&pageSize="+pageSize
+function goAppList(pageid,listid,pageNo){
+    location='list.html?pageid='+pageid+"&listid="+listid+"&pageNo="+pageNo
 }
 //go Search page
 function goSearch(keyword){
-   location='search.html?keyword='+keyword
+   location='searchlist.html?keyword='+keyword
 }
 //7.应用详情 details
 function showdetails(pageid,listid,appid,keyword){
@@ -46,7 +61,7 @@ function showdetails(pageid,listid,appid,keyword){
                 var navul=document.createElement("ul")
                 navul.className="navtop"
                 if(listid!=0){
-                    navul.innerHTML="<li class='li1' onclick=goAppList("+pageid+","+listid+",1,20)>< </li><li class='li2'>应用详情</li>"
+                    navul.innerHTML="<li class='li1' onclick=goAppList("+pageid+","+listid+",1)>< </li><li class='li2'>应用详情</li>"
                 }else{
                     if (pageid!=4){
                         navul.innerHTML="<li class='li1' onclick=goweb("+pageid+")>< </li><li class='li2'>应用详情</li>"
@@ -104,7 +119,7 @@ function showRecommend(pageid,listid,targetbox){
             scrollbox.className="swiper-container thumbs-cotnainer"
             var scrolltitle=document.createElement("div")
             scrolltitle.className="thumbs-title"
-            scrolltitle.innerHTML="<li class='li1'>"+data.data.title+"</li><li class='li2' onclick=goAppList("+pageid+","+listid+",1,20)>显示全部></li>"
+            scrolltitle.innerHTML="<li class='li1'>"+data.data.title+"</li><li class='li2' onclick=goAppList("+pageid+","+listid+",1)>显示全部></li>"
             scrollbox.appendChild(scrolltitle)
             objbox.appendChild(scrollbox)
 
@@ -120,6 +135,14 @@ function showRecommend(pageid,listid,targetbox){
                 slidebox.innerHTML="<img src="+data.data.datalist[i].ico+"><div class='app-title'>"+data.data.datalist[i].title+"</div><div class='app-category'>"+data.data.datalist[i].describe+"</div>"
                 swiperbox.appendChild(slidebox)
             }
+            $('.thumbs-cotnainer').each(function(){
+            		$(this).swiper({
+            			slidesPerView:'auto',
+            			offsetPxBefore:25,
+            			offsetPxAfter:10,
+            			calculateHeight: true
+            		})
+            	})
         },
         error : function (data){
             showerror()
@@ -152,6 +175,16 @@ function showAd(id,targetbox){
             }
             scrollbox.appendChild(swiperbox)
             objbox.appendChild(scrollbox)
+            var featuredSwiper = $('.featured').swiper({
+            		slidesPerView:'auto',
+            		centeredSlides: true,
+            		initialSlide:7,
+            		tdFlow: {
+            			rotate : 30,
+            			stretch :10,
+            			depth: 150
+            		}
+            	})
         },
         error : function (data){
             showerror()
@@ -183,6 +216,13 @@ function showAdBanner(id,targetbox){
             }
             scrollbox.appendChild(swiperbox)
             objbox.appendChild(scrollbox)
+            $('.banners-container').each(function(){
+            		$(this).swiper({
+            			slidesPerView:'auto',
+            			offsetPxBefore:25,
+            			offsetPxAfter:10
+            		})
+            	})
         },
         error : function (data){
             showerror()
@@ -228,11 +268,11 @@ function showsearchbar(keyword){
 
 }
 function searchlist(event){
-
     if(event.keyCode==13) {
         var txt=document.getElementById("key").value
        //alert("searchlist=="+txt)
-        showsearchlist(txt,1,20)
+        //showsearchlist(txt,1)
+        goSearch(txt)
     }
 
 }
@@ -240,7 +280,7 @@ function searchlist(event){
 function showsearchkeyword(){
      $.ajax({
         type: "POST",
-        url:"api/searchkeyword.json",
+        url:searchkeyword,
         dataType:"json",
         contentType: "application/json",
         success : function(data){
@@ -257,8 +297,7 @@ function showsearchkeyword(){
                 objli.className="t2"
                 objli.innerHTML=data.data.datalist[i].txt
                 objli.onclick=function(){
-                    document.getElementById("key").value=this.innerHTML
-                    showsearchlist(this.innerHTML)
+                   goSearch(this.innerHTML)
                     //alert(this.innerHTML)
                 }
                 objul.appendChild(objli)
@@ -270,20 +309,22 @@ function showsearchkeyword(){
      })
 }
 //显示搜索结果列表
-function showsearchlist(key,pageNo,pageSize){
+function showsearchlist(key,pageNo){
     //alert("showsearchlist=="+key)
     $.ajax({
         type: "POST",
-        url:"api/search.json",
+        url:search+"?keyword="+key,
         dataType:"json",
         contentType: "application/json",
         beforeSend:function(){
-            $('.ajax_loading').show() //显示加载时候的提示
+            showload(0)
         },
         success : function(data){
-        $('.ajax_loading').hide() //请求成功,隐藏加载提示
+        if (pageNo>data.data.page.totalPage){
+            showload(1)
+        }else{
             //alert("success")
-            document.getElementById("keywordlist").innerHTML=""
+            //document.getElementById("keywordlist").innerHTML=""
             var obj=document.getElementById("applist")
             var num=data.data.datalist.length
             for(i=0;i<num;i++){
@@ -295,6 +336,9 @@ function showsearchlist(key,pageNo,pageSize){
                 objul.innerHTML="<li class='appico'><img src='"+data.data.datalist[i].ico+"'></li><li class='apptxt'><div class='app-title'>"+data.data.datalist[i].title+"</div><div class='app-category'>"+data.data.datalist[i].category+"</div></li><li class='appbtn'><span class='dbtn' id="+data.data.datalist[i].url+" onclick=download(this,event)>下载</span></li>"
                 obj.appendChild(objul)
             }
+
+            setTimeout('hideload()',3000)
+        }
         },
         error : function (data){
              showerror()
@@ -303,24 +347,32 @@ function showsearchlist(key,pageNo,pageSize){
 }
 
 //5.分类 category
-function showAppCategory(pageid,type){
+function showAppCategory(pageid,pageNo){
     $.ajax({
         type: "POST",
-        url:categoryjson+"?type="+type,
+        url:categoryjson+"?pageNo="+pageNo,
         dataType:"json",
         contentType: "application/json",
+        beforeSend:function(){
+            showload(0)
+        },
         success : function(data){
-            //alert("success")
-            var listli=document.getElementById("listli")
-            listli.className="listli"
-            for(i=0;i<data.data.datalist.length;i++){
-                var cul=document.createElement("ul")
-                cul.id=data.data.datalist[i].id
-                cul.onclick=function(){goAppList(pageid,this.id,1,20)}
-                //cul.onclick=golist('list',2,this.id,1,20)
-                cul.innerHTML=data.data.datalist[i].title
-                listli.appendChild(cul)
+            //alert("success"+data.data.page.totalPage)
+            if (pageNo>data.data.page.totalPage){
+                showload(1)
+            }else{
+                var listli=document.getElementById("listli")
+                listli.className="listli"
+                for(i=0;i<data.data.datalist.length;i++){
+                    var cul=document.createElement("ul")
+                    cul.id=data.data.datalist[i].id
+                    cul.onclick=function(){goAppList(pageid,this.id,1)}
+                    //cul.onclick=golist('list',2,this.id,1)
+                    cul.innerHTML=data.data.datalist[i].title+"P="+pageNo
+                    listli.appendChild(cul)
+                }
             }
+            setTimeout('hideload()',3000)
         },
         error : function (data){
             showerror()
@@ -329,24 +381,32 @@ function showAppCategory(pageid,type){
 
 }
 //5.游戏分类
-function showGameCategory(pageid,type){
+function showGameCategory(pageid,pageNo){
     $.ajax({
         type: "POST",
-        url:categoryjson+"?type="+type,
+        url:categoryjson+"?pageNo="+pageNo,
         dataType:"json",
         contentType: "application/json",
+        beforeSend:function(){
+            showload(0)
+        },
         success : function(data){
-            //alert("success")
-            var listli=document.getElementById("listli")
-            listli.className="listli"
-            for(i=0;i<data.data.datalist.length;i++){
-                var cul=document.createElement("ul")
-                cul.id=data.data.datalist[i].id
-                cul.onclick=function(){goAppList(pageid,this.id,1,20)}
-                //cul.onclick=golist('list',2,this.id,1,20)
-                cul.innerHTML=data.data.datalist[i].title
-                listli.appendChild(cul)
+            if (pageNo>data.data.page.totalPage){
+                showload(1)
+            }else{
+                var listli=document.getElementById("listli")
+                listli.className="listli"
+                for(i=0;i<data.data.datalist.length;i++){
+                    var cul=document.createElement("ul")
+                    cul.id=data.data.datalist[i].id
+                    cul.onclick=function(){goAppList(pageid,this.id,1)}
+                    //cul.onclick=golist('list',2,this.id,1)
+                    cul.innerHTML=data.data.datalist[i].title+"P="+pageNo
+                    listli.appendChild(cul)
+                }
             }
+
+            setTimeout('hideload()',3000)
         },
         error : function (data){
              showerror()
@@ -376,26 +436,34 @@ function showNav(pageid,listid){
     })
 }
 
-function showAppList(pageid,listid,pageNo,pageSize){
+function showAppList(pageid,listid,pageNo){
     $.ajax({
         type: "POST",
-        url:listjson+'?listid='+listid,
+        url:listjson+'?listid='+listid+"&pageNo="+pageNo,
         dataType:"json",
         contentType: "application/json",
+        //alert("success==="+pageNo)
+         beforeSend:function(){
+             showload(0)
+         },
         success : function(data){
-            //alert("success==="+urltype)
+            if (pageNo>data.data.page.totalPage){
+                showload(1)
+            }else{
             var listbox=document.getElementById("thelist")
-            listbox.style="margin-top:50px"
             for(i=0;i<data.data.datalist.length;i++){
                 var appul=document.createElement("div")
                 appul.className="appone"
                 appul.id=data.data.datalist[i].id
                 //跳转至详情页
                 appul.onclick=function(){location='details.html?pageid='+pageid+'&listid='+listid+'&appid='+this.id}
-                appul.innerHTML="<div class='appico'><img src='"+data.data.datalist[i].ico+"'></div><div class='apptxt'><ul class='app-title'>"+data.data.datalist[i].title+"</ul><ul class='app-category'>"+data.data.datalist[i].describe+"</ul></div><div class='appbtn'><span class='dbtn' id="+data.data.datalist[i].url+" onclick=download(this,event)>下载</span></div>"
+                appul.innerHTML="<div class='appico'><img src='"+data.data.datalist[i].ico+"'></div><div class='apptxt'><ul class='app-title'>"+data.data.datalist[i].title+"P="+pageNo+"</ul><ul class='app-category'>"+data.data.datalist[i].describe+"</ul></div><div class='appbtn'><span class='dbtn' id="+data.data.datalist[i].url+" onclick=download(this,event)>下载</span></div>"
                 listbox.appendChild(appul)
-
             }
+            setTimeout('hideload()',3000)
+            }
+            //alert(getScrollHeight()+"=="+window.screen.height)
+
         },
         error : function (data){
             showerror()
@@ -421,4 +489,64 @@ function download(obj,evt){
         }
         alert("download=="+obj.id)
      //window.location.href='details.html'
+}
+//show load
+function showload(n){
+    var loadobj=document.getElementById("loading")
+    switch (n){
+    case 0:
+    loadobj.innerHTML="<li style='padding:20px;'><img src='img/loading.gif'> 正在加载…</li>"
+    break;
+    case 1:
+    loadobj.innerHTML="<li style='padding:20px;'>已经全部加载完…</li>"
+    break;
+    }
+
+    loadobj.style.display="block"
+}
+//hide load
+function hideload(){
+    var loadobj=document.getElementById("loading")
+    loadobj.style.display="none"
+
+}
+
+function getScrollTop() {
+    var scrollTop = 0;
+    if (document.documentElement && document.documentElement.scrollTop) {
+        scrollTop = document.documentElement.scrollTop;
+    }else if (document.body) {
+        scrollTop = document.body.scrollTop;
+    }
+    return scrollTop;
+}
+function getClientHeight() {
+    var clientHeight = 0;
+    if (document.body.clientHeight && document.documentElement.clientHeight) {
+        clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight);
+    }else {
+        clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight);
+    }
+    return clientHeight;
+}
+function getScrollHeight() {
+    return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+}
+//show nav
+function showmenu(pageid){
+    var menuobj=document.getElementById("menudiv")
+    menuobj.innerHTML="<li onclick=location='index.html?pageid=1' id='menu1'>首页</li><li id='menu2' onclick=location='apphome.html?pageid=2'>应用</li><li id='menu3' onclick=location='gamehome.html?pageid=3'>游戏</li><li id='menu4' onclick=location='search.html?pageid=4'>搜索</li>"
+    for(i=1;i<5;i++){
+        var menu=document.getElementById("menu"+i)
+        menu.className=""
+    }
+
+        var menu=document.getElementById("menu"+pageid)
+        menu.className="title1"
+}
+//
+function GetQueryString(name){
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r!=null)return  decodeURI(r[2]); return null;
 }

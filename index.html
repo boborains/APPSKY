@@ -33,15 +33,15 @@
 <div class="line"></div>
 <div id="ph4"></div>
 <div class="pagebottom"></div>
-	<div id="nav" class="nav">
-		<li class="title1" onclick="window.location.href='index.html'">首页</li>
-		<li class="" onclick="window.location.href='apphome.html'">应用</li>
-		<li class="" onclick="window.location.href='gamehome.html'">游戏</li>
-		<li class="" onclick="window.location.href='search.html'">搜索</li>
-	</div>
+<div id="menudiv" class="nav"></div>
 <script src="js/jquery.min.js"></script>
 <script src="js/json.js"></script>
 <script>
+	var pageid=GetQueryString("pageid")
+	if (pageid==null){
+		pageid=1
+	}
+     showmenu(pageid)
 	 showAd(1,'ad01')
 	 showRecommend(1,'1','ph1')
 	 showAdBanner(2,'ad02')
