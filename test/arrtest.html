@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>数组排序</title>
+
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <script type="text/javascript" src="js/setcroll.js"></script>
+    <link rel="stylesheet" href="css/appstore.css">
+
+    <style>
+        #main li{border:1px solid #ececec;list-style-type:none;height:30px;}
+    </style>
+
+</head>
+<body>
+
+<div id="box">
+    <script type="text/javascript">
+      var arr= [
+    {appid:103, orderid:1},
+    {appid:101, orderid:1},
+    {appid:102, orderid:2},
+    {appid:104, orderid:3},
+    ];
+    arr.sort(function(a, b){
+        if (a.orderid === b.orderid) {
+            return a.appid - b.appid;
+        } else {
+            return a.orderid - b.orderid;
+        }
+    });
+    var mbox=document.getElementById("box")
+    for(i=0;i<arr.length;i++){
+        var li=document.createElement("li")
+        li.innerHTML=arr[i].appid+"=="+arr[i].orderid
+        mbox.appendChild(li)
+    }
+    </script>
+</div>
+</body>
+</html>

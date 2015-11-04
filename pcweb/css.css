@@ -1,0 +1,19 @@
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	line-height: 1.5;
+	background: #fff;
+	color: #333;
+}
+body, div, ul, li, img{
+    list-style: none;
+    margin:0px;
+    padding:0px;
+    border:0px;
+    vertical-align:top;
+}
+.homelogo{
+    height:50px;
+    width:100%;
+    text-align:center;
+}
