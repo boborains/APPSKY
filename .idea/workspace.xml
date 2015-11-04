@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d8f4551-7663-46d4-85c8-3261cc17d2b2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PSD/H5应用平台开发合同_20150911_modify.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PSD/login.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PSD/login.psd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pcweb/img/logo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PSD/register-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PSD/register-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PSD/register-3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PSD/register.psd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PSD/uCenter.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PSD/uCenter.psd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PSD/数据库字段设定及说明.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PSD/景美应用平台建设方案.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PSD/项目排期V1.xlsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/arrtest.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pcweb/css.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pcweb/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/json.html" afterPath="$PROJECT_DIR$/json.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test.html" afterPath="$PROJECT_DIR$/test/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pcweb/css.css" afterPath="$PROJECT_DIR$/pcweb/css.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pcweb/index.html" afterPath="$PROJECT_DIR$/pcweb/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="APPSKY.iws" />
@@ -44,8 +28,18 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pcweb/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.375">
-              <caret line="7" column="20" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="20" />
+            <state vertical-scroll-proportion="-10.625">
+              <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="css.css" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/MicroTask/css/css.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.0740743">
+              <caret line="1438" column="28" selection-start-line="1438" selection-start-column="28" selection-end-line="1438" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -54,8 +48,18 @@
       <file leaf-file-name="css.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pcweb/css.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45212767">
-              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.7446808">
+              <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="appstore.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/appstore.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.185185">
+              <caret line="104" column="23" selection-start-line="104" selection-start-column="23" selection-end-line="105" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -437,13 +441,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/API/recommend.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="153" column="20" selection-start-line="0" selection-start-column="0" selection-end-line="156" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/json.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -668,13 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apphome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58550185">
-          <caret line="58" column="70" selection-start-line="58" selection-start-column="70" selection-end-line="58" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45910782">
@@ -768,14 +758,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/appstore.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48703703">
@@ -784,18 +766,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/apphome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22222222">
+          <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="9" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/MicroTask/css/css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.0740743">
+          <caret line="1438" column="28" selection-start-line="1438" selection-start-column="28" selection-end-line="1438" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pcweb/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.375">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="20" />
+        <state vertical-scroll-proportion="-10.625">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/appstore.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.185185">
+          <caret line="104" column="23" selection-start-line="104" selection-start-column="23" selection-end-line="105" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pcweb/css.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45212767">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.7446808">
+          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
           <folding />
         </state>
       </provider>
