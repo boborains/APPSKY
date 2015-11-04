@@ -20,7 +20,7 @@ body, div, ul, li, img{
 .main{
     width:100%;
     text-align:center;
-    background:#5fa558;
+    background:#78ba62;
     padding:15px 0px;
     position: relative;
     margin: 0 auto;
@@ -34,8 +34,20 @@ body, div, ul, li, img{
 }
 .main li{
     float:left;
-}
+    color:#fff;
+    margin:0 auto;
+    width:50%;
 
+}
+.btn{
+    font-size:18px;
+    background:#3f8639;
+    color:#fff;
+	border-radius: 4px;
+    width: 300px;
+	padding:12px 132px;
+	cursor: pointer;
+}
 .main input{
     background:#a6dba0;
     color:#212121;
@@ -44,4 +56,11 @@ body, div, ul, li, img{
 	width:300px;
 	font-size:14px;
 	padding:10px;
+}
+.textleft{
+    text-align:left;
+}
+.textright{
+    text-align:right;
+    color:#fff;
 }
