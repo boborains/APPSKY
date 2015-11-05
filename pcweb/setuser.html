@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>APPSKY-User Center-Modify Password</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="js/con.js"></script>
+</head>
+<body>
+<!--Top---->
+<div class="webtop">
+    <li class="li1"><img src="img/logo.jpg"> </li>
+    <li class="li2">李先生，您好！ <span class="btns">退出</span></li>
+</div>
+<div class="ucnav" id="ucnavbox">
+</div>
+<!--Main---->
+<div class="webmain">
+    <ul class="kong">&nbsp;</ul>
+    <ul>
+        <li class="lileft">旧密码： </li>
+        <li class="licenter"><input type="text" value="please input username" class="inputw1"></li>
+        <li class="liright"><img src="img/ok.png"> </li>
+    </ul>
+    <ul>
+        <li class="lileft">重复旧密码： </li>
+        <li class="licenter"><input type="text" value="please input username" class="inputw1"></li>
+        <li class="liright"><img src="img/error.png"> 两次密码输入不一致!</li>
+    </ul>
+    <ul>
+        <li class="lileft">新密码： </li>
+        <li class="licenter"><input type="text" value="please input username" class="inputw1"></li>
+        <li class="liright">6~14位，由数字和字母组成</li>
+    </ul>
+    <ul class="kong">&nbsp;</ul>
+    <ul>
+        <li class="lileft"> </li>
+        <li class="licenter" ><span class="btn" onclick="location='#'">修改</span></li>
+        <li class="liright"></li>
+    </ul>
+
+</div>
+<!--Bottom---->
+<div class="linebottom"></div>
+<div class="bottom">©2015 Appsky.club  |  京ICP证030173号</div>
+<script>
+    function hideobj(obj){
+        document.getElementById(obj).style.display='none'
+    }
+    function showobj(obj){
+        document.getElementById(obj).style.display='block'
+    }
+setucnav(3)
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>APPSKY-User Center-My App</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="js/con.js"></script>
+</head>
+<body>
+<!--Top---->
+<div class="webtop">
+    <li class="li1"><img src="img/logo.jpg"> </li>
+    <li class="li2">李先生，您好！ <span class="btns">退出</span></li>
+</div>
+<div class="ucnav" id="ucnavbox">
+</div>
+<!--Main---->
+<div class="ucmain">
+    <ul >
+        <li class="ucnavboxadd"><div class="fadd">+</div><div class="f18">发布新应用</div></li>
+        <li class="ucnavboxapp" id="app1" onmousemove="showobj('appctrlnav1')" onmouseout="hideobj('appctrlnav1')">
+            <div class="title">库客音乐</div>
+            <div class="txt">版本：V1.0.1<br/>
+                大小：21MB<br/>
+                发布日期：2015-10-22<br/>
+                状态：审核中</div>
+            <div id="appctrlnav1" class="ctrl">
+                <span><img src="img/appc1.png"> 修改&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span><img src="img/appc2.png"> 发布&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span><img src="img/appc3.png"> 删除</span>
+            </div>
+        </li>
+
+    </ul>
+</div>
+<!--Bottom---->
+<div class="linebottom"></div>
+<div class="bottom">©2015 Appsky.club  |  京ICP证030173号</div>
+<script>
+    setucnav(0)
+    function hideobj(obj){
+        document.getElementById(obj).style.display='none'
+    }
+    function showobj(obj){
+        document.getElementById(obj).style.display='block'
+    }
+
+
+
+</script>
+</body>
+</html>

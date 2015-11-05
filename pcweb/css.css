@@ -7,10 +7,10 @@ body {
 }
 body, div, ul, li, img{
     list-style: none;
-    margin:0px;
     padding:0px;
     border:0px;
     vertical-align:top;
+	margin:0 auto;
 }
 .homelogo{
     width:100%;
@@ -24,6 +24,7 @@ body, div, ul, li, img{
     padding:15px 0px;
     position: relative;
     margin: 0 auto;
+	overflow:hidden;
 }
 .main ul{
     padding:10px 0px;
@@ -63,4 +64,200 @@ body, div, ul, li, img{
 .textright{
     text-align:right;
     color:#fff;
+}
+
+.webtop{
+    width:1000px;
+	margin:0 auto;
+	padding:20px 15px;
+	overflow:hidden;
+}
+.webtop .li1{
+    float:left;
+    width:40%;
+}
+.webtop .li2{
+    float:right;
+    text-align:right;
+    line-height:40px;
+    color:#666;
+}
+.btns{
+    font-size:13px;
+    background:#7cc576;
+    color:#fff;
+	border-radius: 4px;
+	padding:6px 12px;
+	cursor: pointer;
+}
+.line{
+    background:#7cc576;
+    height:6px;
+    width:100%;
+}
+.linebottom{
+    background:#7cc576;
+    height:11px;
+    width:100%;
+}
+.bottom{
+    font-size:14px;
+    color:#666;
+    text-align:center;
+    line-height:70px;
+}
+.webmain{
+    width:1000px;
+    color:#666;
+	overflow:hidden;
+	margin:0 auto;
+	padding:0px 0px 50px 0px;
+}
+.webmain ul{
+	overflow:hidden;
+}
+.webmain .step1{
+    background:#fff url(img/step1.jpg) no-repeat center;
+    height:120px;
+}
+.webmain .step2{
+    background:#fff url(img/step2.jpg) no-repeat center;
+    height:120px;
+}
+.webmain .step3{
+    background:#fff url(img/step3.jpg) no-repeat center;
+    height:120px;
+}
+.webmain input[type=text]{
+    border:1px solid #ececec;
+    background:#fff;
+    border-radius:4px;
+    line-height:28px;
+    color:#666;
+}
+.inputw1{
+    width:295px;
+}
+.inputw2{
+    width:150px;
+}
+.webmain .lileft{
+    float:left;
+    width:25%;
+    font-size:16px;
+    line-height:30px;
+    text-align:right;
+    margin:10px 0px;
+}
+.webmain .licenter{
+    float:left;
+    font-size:14px;
+    line-height:30px;
+    margin:10px 0px;
+}
+.webmain .liright{
+    float:left;
+    font-size:12px;
+    line-height:30px;
+    margin:10px;
+}
+.webmain input[type=checkbox] {
+    border:1px solid #ececec;
+    border-radius:4px;
+    background:#000
+}
+.registtips {
+    margin:70px;
+    text-align:center;
+    line-height:30px;
+    font-size:16px;
+}
+/*** User Center **/
+
+.ucnav{
+    background:#7cc576;
+    font-size:18px;
+    color:#fff;
+    text-align:center;
+    width:100%;
+    overflow:hidden;
+    margin:0 auto;
+}
+.ucnav ul{
+    width:1000px;
+}
+.ucnav li{
+    display:inline;
+    line-height:100px;
+    margin:0 30px;
+    padding:40px 20px;
+    cursor:pointer;
+
+}
+.ucnav .navactive{
+   background:url("img/navbg.png") no-repeat center bottom;
+}
+.ucmain{
+    width:1000px;
+    color:#666;
+	overflow:hidden;
+	margin:0 auto;
+	text-align:center;
+	min-height:400px;
+}
+.ucmain ul{
+    padding:10px 50px 80px;
+    overflow:hidden;
+    color:#fff;
+}
+.ucnavboxadd{
+    width:240px;
+    height:220px;
+    background:#abe3a6;
+    border-radius:4px;
+    float:left;
+    margin:40px 0px 0px 40px;
+}
+.ucnavboxapp{
+    width:240px;
+    height:220px;
+    background:#71b96b;
+    border-radius:4px;
+    float:left;
+    margin:40px 0px 0px 40px;
+}
+.f18{
+    font-size:18px;
+    line-height:12px;
+}
+.fadd{
+    font-size:120px;
+    line-height:110px;
+    padding-top:35px;
+    cursor:pointer;
+}
+.ucnavboxapp div{
+    text-align:left;
+    margin:10px 25px;
+}
+.ucnavboxapp .title{
+    font-size:24px;
+    margin-top:20px;
+}
+.ucnavboxapp .txt{
+    font-size:12px;
+    height:110px;
+}
+.ucnavboxapp .ctrl{
+    text-align:center;
+    display:none;
+}
+.ucnavboxapp .ctrl span{
+    cursor:pointer;
+}
+.kong{
+    margin:20px;
+    text-align:center;
+    color:#ffb750;
+    font-size:16px;
 }
