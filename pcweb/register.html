@@ -9,7 +9,7 @@
 <!--Top---->
 <div class="webtop">
     <li class="li1"><img src="img/logo.jpg"> </li>
-    <li class="li2">我已注册，现在就 <span class="btns">登录</span></li>
+    <li class="li2">我已注册，现在就 <span class="btns" onclick="location='index.html'">登录</span></li>
 </div>
 <div class="line"></div>
 <!--Main---->
@@ -18,23 +18,23 @@
     <ul class="step1">&nbsp;</ul>
     <ul>
         <li class="lileft">邮  箱： </li>
-        <li class="licenter"><input type="text" value="please input username" class="inputw1"></li>
-        <li class="liright">请输入有效的邮箱地址，可用于登录和找回密码。</li>
+        <li class="licenter"><input type="text" value="please input username" class="inputw1"><span class="Validform_right">&nbsp;</span></li>
+        <li class="lilefttips">&nbsp;</li><li class="licentertips">请输入有效的邮箱地址，可用于登录和找回密码。</li>
     </ul>
     <ul>
         <li class="lileft">密  码： </li>
-        <li class="licenter"><input type="text" value="please input username" class="inputw1"></li>
-        <li class="liright">6~14位，由数字和字母组成</li>
+        <li class="licenter"><input type="text" value="please input username" class="inputw1"><span class="Validform_right">&nbsp;</span></li>
+        <li class="lilefttips">&nbsp;</li><li class="licentertips">6~14位，由数字和字母组成</li>
     </ul>
     <ul>
         <li class="lileft">确认密码： </li>
-        <li class="licenter"><input type="text" value="please input username" class="inputw1"></li>
-        <li class="liright">两次密码输入不一致!</li>
+        <li class="licenter"><input type="text" value="" class="inputw1">
+        <span class="Validform_wrong">两次密码输入不一致!</span></li>
+        <li class="lilefttips">&nbsp;</li><li class="licentertips">&nbsp;</li>
     </ul>
     <ul>
         <li class="lileft">验证码： </li>
-        <li class="licenter"><input type="text" value="please input username" class="inputw2"></li>
-        <li class="liright">验证码输入错误!</li>
+        <li class="licenter"><input type="text" value="please input username" class="inputw2"><span class="Validform_wrong">验证码输入错误!</span></li>
     </ul>
     <ul>
         <li class="lileft"> </li>
@@ -43,7 +43,7 @@
     </ul>
     <ul>
         <li class="lileft"> </li>
-        <li class="licenter"><span class="btn" onclick="location='register-1.html'">注册</span></li>
+        <li class="licenter"><span class="btn" onclick="location='#'">注册</span></li>
         <li class="liright"></li>
     </ul>
 
@@ -58,18 +58,15 @@
     </ul>
     <ul>
         <li class="lileft">姓  名： </li>
-        <li class="licenter"><input type="text" value="" class="inputw1"></li>
-        <li class="liright">请输入有效的邮箱地址，可用于登录和找回密码。</li>
+        <li class="licenter"><input type="text" value="" class="inputw1"><span class="Validform_wrong">姓名不能为空</span></li>
     </ul>
     <ul>
         <li class="lileft">身份证号： </li>
-        <li class="licenter"><input type="text" value="" class="inputw1"></li>
-        <li class="liright">请输入有效的邮箱地址，可用于登录和找回密码。</li>
+        <li class="licenter"><input type="text" value="" class="inputw1"><span class="Validform_right">&nbsp;</span></li>
     </ul>
     <ul>
         <li class="lileft">手持身份证照： </li>
         <li class="licenter"><span class="btns">选择</span></li>
-        <li class="liright">请输入有效的邮箱地址，可用于登录和找回密码。</li>
     </ul>
     <ul>
         <li class="lileft">联系人：</li>
@@ -113,7 +110,7 @@
     </ul>
     <ul>
         <li class="lileft"> </li>
-        <li class="licenter"><span class="btn" onclick="location='register-1.html'">提交</span></li>
+        <li class="licenter"><span class="btn" onclick="location='#'">提交</span></li>
         <li class="liright"></li>
     </ul>
 </div>

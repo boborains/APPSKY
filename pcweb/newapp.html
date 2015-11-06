@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>APPSKY-Register Step1</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+<!--Top---->
+<div class="webtop">
+    <li class="li1"><img src="img/logo.jpg"> </li>
+    <li class="li2">李先生，您好！ <span class="btns" onclick="location='index.html'">退出</span></li>
+</div>
+<div class="line"></div>
+<!--Main---->
+<div class="webmain">
+    <!--step1---->
+    <ul class="step01">&nbsp;</ul>
+    <ul class="txt1">正在创建应用。。。</ul>
+    <ul class="txt2">请选择软件类型</ul>
+    <ul class="checkbtn">
+        <span>软件应用</span><span>游戏应用</span>
+    </ul>
+</div>
+<!--step2---->
+<div class="webmain">
+    <ul class="step01">&nbsp;</ul>
+    <ul class="txt3">上传安装包并完善信息</ul>
+    <ul class="step2box">
+        <div class="t1">
+            完善描述信息
+        </div>
+        <div>
+            <ul>
+                <li class="lileft2">软件安装包：</li>
+                <li class="liright2"><span class="btns">上传</span></li>
+            </ul>
+            <ul>
+                <li class="lileft2">应用名称：</li>
+                <li class="liright2">
+                    <input type="text" value="" class="inputw1">
+                    <span class="Validform_wrong">sss</span>
+                </li>
+                <li class="lileft2">&nbsp;</li>
+                <li class="liright2tips">不超过30个字符，建议与包中应用名称一致。</li>
+            </ul>
+            <ul>
+                <li class="lileft2">分类：</li>
+                <li class="liright2">
+                    <select id="1131" class="appsel1 gw selectArea changestatus" flag="true" name="tag1" datatype="cate" errormsg="请选择分类"><option value="0">软件分类</option><option value="1131,1278">儿童亲子</option><option value="1131,1516">实用工具</option><option value="1131,1515">旅游酒店</option><option value="1131,1338">运动健康</option><option value="1131,1337">金融理财</option><option value="1131,1336">教育学习</option><option value="1131,1335">交通导航</option><option value="1131,1334">购物优惠</option><option value="1131,1333">摄影摄像</option><option value="1131,1217">办公商务</option><option value="1131,1208">系统安全</option><option value="1131,1209">通讯社交</option><option value="1131,1210">影音视听</option><option value="1131,1213">主题壁纸</option><option value="1131,1214">新闻阅读</option><option value="1131,1215">便捷生活</option></select>
+                </li>
+            </ul>
+            <ul>
+                <li class="lileft2">上传版权证明（选填）：</li>
+                <li class="liright2"><span class="btns">上传</span></li>
+                <li class="lileft2">&nbsp;</li>
+                <li class="liright2tips">JPG、PNG或压缩包格式，图片大小不能超过1MB，有多个文件请打包为RAR、ZIP格式，大小不能超过10MB。</li>
+            </ul>
+            <ul>
+                <li class="lileft2">支持语言：</li>
+                <li class="liright2"><select name="lang" id="lang" datatype="*" nullmsg="请选择支持语言">
+                    <option value="1">
+                        简体中文</option>
+                    <option value="2">
+                        繁体中文</option>
+                    <option value="3">
+                        英文</option>
+                </select><span class="Validform_right">&nbsp;</span></li>
+            </ul>
+            <ul>
+                <li class="lileft2">资费类型：</li>
+                <li class="liright2"><select class="Validform_error" name="is_free" id="for_free" datatype="*" nullmsg="请选择资费类型"><option value="">请选择</option><option value="1">功能付费</option><option value="2">免费软件</option><option value="3">免费试用</option><option value="8">部分功能付费</option><option value="9">部分内容付费</option><option value="10">内容付费</option></select></li>
+            </ul>
+            <ul>
+                <li class="lileft2">一句话简介：</li>
+                <li class="liright2"><input type="text" value="" class="inputw1"></li>
+                <li class="lileft2">&nbsp;</li>
+                <li class="liright2tips">13-22个字，简要说明产品的特色和卖点。</li>
+            </ul>
+            <ul>
+                <li class="lileft2">应用简介： </li>
+                <li class="liright2"><textarea class="Validform_error" id="brief" name="brief" datatype="*50-1500" nullmsg="应用简介不能为空" errormsg="必须为50-1500个字"></textarea></li>
+                <li class="lileft2">&nbsp;</li>
+                <li class="liright2tips">50-1500字，请向用户介绍一下你的应用。</li>
+            </ul>
+            <ul>
+                <li class="lileft2">当前版本介绍： </li>
+                <li class="liright2"><textarea class="Validform_error" id="brief" name="brief" datatype="*50-1500" nullmsg="应用简介不能为空" errormsg="必须为50-1500个字"></textarea></li>
+                <li class="lileft2">&nbsp;</li>
+                <li class="liright2tips">50-400字符，请向用户介绍当前应用版本及更新内容。</li>
+            </ul>
+        </div>
+        <div class="t1">
+            上传图标和截图
+        </div>
+        <div>
+            <ul>
+                <li class="lileft2">应用图标： </li>
+                <li class="liright2tips">要求与安装包中图标一致。尺寸：512*512PX，圆角半径弧度：70PX，图片格式：PNG。 请按照右侧示例上传。</li>
+                <li class="lileft2">&nbsp;</li>
+                <li class="liright2"></li>
+
+                </li>
+            </ul>
+            <ul>
+                <li class="lileft2">应用截图： </li>
+                <li class="liright2tips">请上传4-5张截图（尺寸保持一致），支持JPG、PNG格式。截图尺寸要求：不小于800*480（480*800），单张图片不能超过3M。请去除截图中的顶部通知栏。 查看示例</li>
+                <li class="lileft2">&nbsp;</li>
+                <li class="liright2"></li>
+
+                </li>
+            </ul>
+        </div>
+        <div class="t1">
+            审核与发布设置
+        </div>
+        <div>
+            <ul>
+                <li class="lileft2">审核辅助说明（选填）： </li>
+                <li class="liright2"><textarea class="Validform_error" id="brief" name="brief" datatype="*50-1500" nullmsg="应用简介不能为空" errormsg="必须为50-1500个字"></textarea></li>
+                <li class="lileft2">&nbsp;</li>
+                <li class="liright2tips">1. 是否有哪些特殊机型或CPU等要求。<br/>
+                    2. 如修改了包的签名，需在此填写修改签名原因。<br/>
+                    3. 如上次提交审核未通过，则需在此填写备注信息，帮助审核通过。<br/>
+                    4. 游戏、应用的测试账号、密码也可以在这里填写。<br/>
+                    5. 最多不超过400字。</li>
+            </ul>
+            <ul>
+                <li class="lileft2">发布时间： </li>
+                <li class="liright2"><input type="radio" checked>审核后立即发布&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio">定时发布</li>
+            </ul>
+        </div>
+    </ul>
+    <ul class="kong">&nbsp;</ul>
+    <ul class="stepbtn"><span class="btn" onclick="location='#'">提交审核</span></ul>
+</div>
+<!--step3---->
+<div class="webmain">
+    <ul class="step02">&nbsp;</ul>
+    <ul class="registtips">您的应用已提交，我们会尽快审核。<br/>请耐心等待结果。
+    </ul>
+</div>
+<!--Bottom---->
+<div class="linebottom"></div>
+<div class="bottom">©2015 Appsky.club  |  京ICP证030173号</div>
+
+
+</body>
+</html>

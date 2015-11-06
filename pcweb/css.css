@@ -1,5 +1,5 @@
 body {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: "Microsoft YaHei",tahoma,Verdana,Arial,sans-serif;
 	font-size: 13px;
 	line-height: 1.5;
 	background: #fff;
@@ -20,7 +20,7 @@ body, div, ul, li, img{
 .main{
     width:100%;
     text-align:center;
-    background:#78ba62;
+    background:#4092de;
     padding:15px 0px;
     position: relative;
     margin: 0 auto;
@@ -41,29 +41,35 @@ body, div, ul, li, img{
 
 }
 .btn{
-    font-size:18px;
-    background:#3f8639;
-    color:#fff;
-	border-radius: 4px;
-    width: 300px;
-	padding:12px 132px;
 	cursor: pointer;
+	text-align:center;
+	display: inline-block;
+    background-color: #0375de;
+    border-radius: 5px;
+    color: #FFF;
+    font-size: 18px;
+    padding: 12px 130px;
+    margin: 0px ;
 }
 .main input{
-    background:#a6dba0;
-    color:#212121;
+    color:#333;
 	border-radius: 4px;
-	border:1px solid #a6dba0;
-	width:300px;
+	border:1px solid #0375de;
+	width:295px;
 	font-size:14px;
 	padding:10px;
+    background:#fcfcfc;
+    opacity:0.5;
+    filter:alpha(opacity=50);
 }
 .textleft{
+    float:left;
     text-align:left;
 }
 .textright{
     text-align:right;
     color:#fff;
+    cursor:pointer;
 }
 
 .webtop{
@@ -84,19 +90,19 @@ body, div, ul, li, img{
 }
 .btns{
     font-size:13px;
-    background:#7cc576;
+    background:#4092de;
     color:#fff;
 	border-radius: 4px;
 	padding:6px 12px;
 	cursor: pointer;
 }
 .line{
-    background:#7cc576;
+    background:#4092de;
     height:6px;
     width:100%;
 }
 .linebottom{
-    background:#7cc576;
+    background:#4092de;
     height:11px;
     width:100%;
 }
@@ -117,15 +123,27 @@ body, div, ul, li, img{
 	overflow:hidden;
 }
 .webmain .step1{
-    background:#fff url(img/step1.jpg) no-repeat center;
+    background:#fff url(img/step1.png) no-repeat center;
     height:120px;
 }
 .webmain .step2{
-    background:#fff url(img/step2.jpg) no-repeat center;
+    background:#fff url(img/step2.png) no-repeat center;
     height:120px;
 }
 .webmain .step3{
-    background:#fff url(img/step3.jpg) no-repeat center;
+    background:#fff url(img/step3.png) no-repeat center;
+    height:120px;
+}
+.webmain .step01{
+    background:#fff url(img/s1.png) no-repeat center;
+    height:120px;
+}
+.webmain .step02{
+    background:#fff url(img/s2.png) no-repeat center;
+    height:120px;
+}
+.webmain .step03{
+    background:#fff url(img/s3.png) no-repeat center;
     height:120px;
 }
 .webmain input[type=text]{
@@ -134,6 +152,8 @@ body, div, ul, li, img{
     border-radius:4px;
     line-height:28px;
     color:#666;
+    font-size:14px;
+    padding-left:8px;
 }
 .inputw1{
     width:295px;
@@ -143,17 +163,30 @@ body, div, ul, li, img{
 }
 .webmain .lileft{
     float:left;
-    width:25%;
+    width:20%;
     font-size:16px;
     line-height:30px;
     text-align:right;
-    margin:10px 0px;
+    margin:15px 0px 3px 0px;
 }
 .webmain .licenter{
     float:left;
+    width:75%;
     font-size:14px;
     line-height:30px;
-    margin:10px 0px;
+    margin:15px 0px 3px 0px;
+}
+.webmain .lilefttips{
+    float:left;
+    width:20%;
+    text-align:right;
+}
+.webmain .licentertips{
+    float:left;
+    width:80%;
+    font-size:12px;
+    line-height:14px;
+    color:#ccc;
 }
 .webmain .liright{
     float:left;
@@ -175,7 +208,7 @@ body, div, ul, li, img{
 /*** User Center **/
 
 .ucnav{
-    background:#7cc576;
+    background:#4092de;
     font-size:18px;
     color:#fff;
     text-align:center;
@@ -213,7 +246,7 @@ body, div, ul, li, img{
 .ucnavboxadd{
     width:240px;
     height:220px;
-    background:#abe3a6;
+    background:#93c2ed;
     border-radius:4px;
     float:left;
     margin:40px 0px 0px 40px;
@@ -221,7 +254,7 @@ body, div, ul, li, img{
 .ucnavboxapp{
     width:240px;
     height:220px;
-    background:#71b96b;
+    background:#4092de;
     border-radius:4px;
     float:left;
     margin:40px 0px 0px 40px;
@@ -260,4 +293,112 @@ body, div, ul, li, img{
     text-align:center;
     color:#ffb750;
     font-size:16px;
+}
+.txt1{
+    color:#ff9900;
+    font-size:18px;
+    text-align:center;
+}
+.txt2{
+    font-size:36px;
+    color:#373737;
+    text-align:center;
+    line-height:65px;
+}
+.txt3{
+    font-size:30px;
+    color:#ff9900;
+    text-align:center;
+    line-height:65px;
+}
+.checkbtn{
+    text-align:center;
+}
+.checkbtn span{
+    background:#0375de;
+    margin:120px 50px;
+    color:#fff;
+    font-size:18px;
+    border-radius:4px;
+    padding:45px;
+    line-height:180px;
+}
+.step2box{
+    width:950px;
+    border:1px solid #ececec;
+}
+.step2box div{
+    margin:15px;
+    overflow:hidden;
+}
+.step2box .t1{
+    font-size:20px;
+    color:#383838;
+    border-bottom:1px solid #ececec;
+}
+.step2box ul{
+    margin:20px 10px;
+}
+.step2box .lileft2{
+    width:20%;
+    float:left;
+    text-align:right;
+    font-size:14px;
+    line-height:32px;
+}
+.step2box .liright2{
+    width:80%;
+    float:left;
+    text-align:left;
+    line-height:32px;
+}
+.step2box .liright2tips{
+    width:80%;
+    float:left;
+    font-size:12px;
+    color:#ccc;
+    text-align:left;
+}
+.step2box select{
+    height:35px;
+    width: 130px;
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    padding-left: 8px;
+    font-size:14px;
+}
+.stepbtn{
+    line-height:65px;
+    text-align:center;
+}
+.step2box textarea {
+    width: 415px;
+     height: 196px;
+     padding-top: 8px;
+     border: 1px solid #DCDCDC;
+     border-radius: 5px;
+     padding-left: 8px;
+ }
+.Validform_wrong {
+     background-image: url("img/validicon.png");
+     background-repeat: no-repeat;
+     display: inline-block;
+     padding-left: 24px;
+     line-height: 20px;
+    margin-left: 18px;
+     background-position: 0px -21px;
+     color: #FF5831;
+}
+.Validform_right {
+    display: inline-block;
+    background-position: 0px 2px;
+    color: #4AB41E;
+    margin-left: 18px;
+    padding-left: 24px;
+     line-height: 20px;
+    background-image: url("img/validicon.png");
+    background-repeat: no-repeat;
+}
+.building{
+    background:url("img/building.jpg") no-repeat center top;
 }
