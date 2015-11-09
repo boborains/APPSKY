@@ -31,10 +31,11 @@
 <div class="listtitle">
     分类
 </div>
-<div class="listli" id="listli">
+<div id="thislist">
+    <div class="listli" id="listli">
 
+    </div>
 </div>
-
 <div class='ajax_loading' id="loading"></div>
 <div class="pagebottom"></div>
 <div id="menudiv" class="nav">
@@ -47,9 +48,9 @@ var pageid=GetQueryString("pageid")
 		pageid=3
 	}
      showmenu(pageid)
-	 showFocusAd(6,'Focusad')
-	 showRecommend(pageid,'1','ph')//showRecommend(urltype,type,targetbox)
-	 showRecommend(pageid,'1','ph')//showRecommend(urltype,type,targetbox)
+	 showFocusAd(1,'Focusad')
+	 showRecommend(pageid,'3','ph')//showRecommend(urltype,type,targetbox)
+	 showRecommend(pageid,'2','ph')//showRecommend(urltype,type,targetbox)
 
 	 var page_num=1
 	 showGameCategory(pageid,page_num)

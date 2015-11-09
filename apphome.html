@@ -33,9 +33,12 @@
 <div class="listtitle">
     分类
 </div>
-<div class="listli" id="listli">
+<div id="thislist">
+    <div class="listli" id="listli">
 
+    </div>
 </div>
+
 
 <div class='ajax_loading' id="loading"></div>
 <div class="pagebottom"></div>
@@ -50,17 +53,12 @@
 		pageid=2
 	 }
      showmenu(pageid)
-	 showFocusAd(6,'Focusad')
-	 showRecommend(pageid,'1','ph')
+	 showFocusAd(1,'Focusad')
+	 showRecommend(pageid,'2','ph')
 	 var page_num=1
 	 showAppCategory(pageid,page_num)
 
-     window.onscroll = function () {
-        if (getScrollTop() + getClientHeight() == getScrollHeight()) {
-            page_num=page_num+1;
-            showAppCategory(pageid,page_num)
-        }
-     }
+
 
 
 			</script>

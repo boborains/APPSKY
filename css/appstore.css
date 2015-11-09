@@ -485,10 +485,40 @@ input[type="text"]:focus{
 
 .fontgray{color:#999;}
 #thelist{margin-top:50px;}
+
 .ajax_loading{
 	display:none;
 	width:100%;
 	text-align:center;
 	font-size:14px;
 	bottom:0px
+}
+.loadtips{
+	text-align:center;
+	padding-top:100px;
+	line-height:45px;
+	font-size:14px;
+	color:#666;
+}
+
+.loadtips1{
+	text-align:center;
+	padding-top:10px;
+	line-height:45px;
+	font-size:14px;
+	color:#666;
+}
+#Focusad .loadtips1 img{
+	width:38px;
+	height:39px;
+}
+.refreshbtn{
+	border:1px solid #83b7e8;
+	border-radius:4px;
+	padding:10px 20px;
+	margin:10px;
+	background:#fff;
+	font-size:14px;
+	color:#4092de;
+	cursor:pointer;
 }
