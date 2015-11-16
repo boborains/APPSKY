@@ -145,9 +145,15 @@ body, div, ul, li, img{list-style: none;margin:0px;padding:0px;border:0px;vertic
 	border-bottom:1px solid #ececec;
 	height:5px;
 }
+.ad03{
+	position:relative;
+	margin:0px auto;
+	overflow:hidden;
+	padding:8px 15px 5px 15px;
+}
 .ad03 img{
-	margin:10px 20px 2px 20px;
-	width:90%;
+
+	width:100%;
 }
 .pagebottom{height:50px;}
 .nav{
@@ -173,7 +179,7 @@ body, div, ul, li, img{list-style: none;margin:0px;padding:0px;border:0px;vertic
 	background:url(../img/navbg.png) no-repeat center top;
 }
 /* focus AD css -------------------------------------- */
-	.slideBox{ position:relative; overflow:hidden; margin:0px auto;  max-width:560px;/* 设置焦点图最大宽度 */ }
+	.slideBox{ position:relative; overflow:hidden; margin:0px auto;  max-width:560px;/* 设置焦点图最大宽度 */}
 	.slideBox .hd{ position:absolute; height:15px; line-height:15px; bottom:0; right:0; z-index:1;text-align:center;width:100%;}
 	.slideBox .hd li{ display:inline-block; width:5px; height:5px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; background:#333; text-indent:-9999px; overflow:hidden; margin:0 6px;}
 	.slideBox .hd li.on{ background:#fff;  }
@@ -181,7 +187,7 @@ body, div, ul, li, img{list-style: none;margin:0px;padding:0px;border:0px;vertic
 	.slideBox .bd li{ position:relative; text-align:center;  }
 	.slideBox .bd li img{ background:url(images/loading.gif) center center no-repeat;  vertical-align:top; width:100%;/* 图片宽度100%，达到自适应效果 */ }
 	.slideBox .bd li a{ -webkit-tap-highlight-color:rgba(0,0,0,0);  }  /* 去掉链接触摸高亮 */
-	#Focusad img{height:200px;}
+	#Focusad img{}
 /* focus AD css -------------------------------------- */
 
 .listtitle{

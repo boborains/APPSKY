@@ -3,65 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1">
-    <title>Appsky-APP HOME</title>
+    <title>Appsky-APP LIST</title>
     <link rel="stylesheet" href="css/idangerous.swiper.css">
     <link rel="stylesheet" href="css/idangerous.swiper.3dflow.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/appstore.css">
-    <script src="js/focus-js/TouchSlide.1.1.js"></script>
-    <script src="js/jquery-1.10.1.min.js"></script>
 </head>
 <body>
+<script>
 
-<div id="content">
-    <div id="slideBox" class="slideBox">
-        <div class="bd" id="bdbox">
-            <ul id="Focusad">
+</script>
+<div class="topnav" id="nav">
 
-            </ul>
-        </div>
-
-        <div class="hd">
-            <ul></ul>
-        </div>
-    </div>
 </div>
+<div id="thelist">
 
-<!--focus AD 结束-->
-<div id="ph"></div>
-
-<div class="listtitle">
-    分类
 </div>
-<div id="thislist">
-    <div class="listli" id="listli">
-
-    </div>
-</div>
-
-
 <div class='ajax_loading' id="loading"></div>
 <div class="pagebottom"></div>
+
 <div id="menudiv" class="nav">
 
 </div>
 <script src="js/jquery.min.js"></script>
 <script src="js/json.js"></script>
 <script>
-     var pageid=GetQueryString("pageid")
-     if (pageid==null){
-		pageid=2
-	 }
-     showmenu(pageid)
-	 showFocusAd(4,'Focusad')
-	 showRecommend(2,'7','ph')//热门应用
-	 var page_num=1
-	 showAppCategory(pageid,page_num)
+    var pageid=GetQueryString("pageid")
+    var listid=GetQueryString("listid")
+
+    showmenu(pageid)
+    showRecNav(pageid,listid)
+
+    var page_num=1;
+    showRecommedList(pageid,listid,page_num)
+    window.onscroll = function () {
+        if (getScrollTop() + getClientHeight() == getScrollHeight()) {
+           page_num=page_num+1;
+           showRecommedList(pageid,listid,page_num)
+        }
+    }
 
 
 
+</script>
 
-			</script>
 <!-- Don't forget to get the latest Swiper and scrollbar version here-->
 <script src="js/idangerous.swiper-2.0.min.js"></script>
 <script src="js/idangerous.swiper.3dflow-2.0.js"></script>

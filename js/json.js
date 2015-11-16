@@ -13,8 +13,9 @@ var adjson="http://lencn.com/sd23/api/ad.asp"
 var categoryjson="http://lencn.com/sd23/api/category.asp"
 var listjson="http://lencn.com/sd23/api/list.asp"
 var detailsjson="http://lencn.com/sd23/api/detail.asp"
-var searchkeyword="http://lencn.com/appsky/api/asp/searchkeyword.asp"
-var search="http://lencn.com/appsky/api/asp/search.asp"
+var searchkeyword="http://lencn.com/sd23/api/searchkeyword.asp"
+var search="http://lencn.com/sd23/api/search.asp"
+var ddloadurl="http://lencn.com/sd23/api/dw.asp"
 
 
 
@@ -39,6 +40,10 @@ function goweb(id){
 //show app list
 function goAppList(pageid,listid,pageNo){
     location='list.html?pageid='+pageid+"&listid="+listid+"&pageNo="+pageNo
+}
+//show recommend list
+function goRecommendlist(pageid,listid,pageNo){
+    location='listrecommend.html?pageid='+pageid+"&listid="+listid+"&pageNo="+pageNo
 }
 //go Search page
 function goSearch(keyword){
@@ -114,11 +119,10 @@ function showdetails(pageid,listid,appid,keyword){
                     loadcode0(applistbox)
                    // alert(data.code)
                 }
-
-                    removeloadobj(applistbox,'loadobjbox')
+                removeloadobj(applistbox,'loadobjbox')
             },
             error : function (data){
-                showerror()
+                loadcode0(applistbox)//showerror()
             },
     })
 
@@ -140,7 +144,7 @@ function showRecommend(pageid,listid,targetbox){
                 scrollbox.className="swiper-container thumbs-cotnainer"
                 var scrolltitle=document.createElement("div")
                 scrolltitle.className="thumbs-title"
-                scrolltitle.innerHTML="<li class='li1'>"+data.data.title+"</li><li class='li2' onclick=goAppList("+pageid+","+listid+",1)>显示全部></li>"
+                scrolltitle.innerHTML="<li class='li1'>"+data.data.title+"</li><li class='li2' onclick=goRecommendlist("+pageid+","+listid+",1)>显示全部></li>"
                 scrollbox.appendChild(scrolltitle)
                 objbox.appendChild(scrollbox)
 
@@ -170,7 +174,7 @@ function showRecommend(pageid,listid,targetbox){
 
         },
         error : function (data){
-            showerror()
+            loadcode1(objbox)//showerror()
         },
     })
 }
@@ -217,7 +221,7 @@ function showAd(id,targetbox){
 
         },
         error : function (data){
-            showerror()
+            loadcode1(objbox)//showerror()
         },
     })
 }
@@ -260,7 +264,31 @@ function showAdBanner(id,targetbox){
 
         },
         error : function (data){
-            showerror()
+            loadcode1(objbox)//showerror()
+        },
+    })
+}
+//2.广告，首页横通
+function showhomebanner(id,targetbox){
+var objbox=document.getElementById(targetbox)
+    $.ajax({
+        type:"POST",
+        url:adjson+"?type="+id,
+        dataType:"json",
+        contentType:"application/json",
+        success : function(data){
+            //alert("ad-s")
+            if (data.code==200){
+                var div=document.createElement("div")
+                div.innerHTML="<img id='"+data.data.datalist[0].url+"' onclick=getURL(this.id) src="+data.data.datalist[0].img+">"
+                objbox.appendChild(div)
+            }else{
+                loadcode1(objbox)
+            }
+
+        },
+        error : function (data){
+            loadcode1(objbox)//showerror()
         },
     })
 }
@@ -294,7 +322,7 @@ function showFocusAd(id,targetbox){
             //objbox.appendChild(ul1)
         },
         error:function (data){
-            showerror()
+            loadcode1(obj)//showerror()
         }
     })
 }
@@ -379,7 +407,7 @@ function showsearchlist(key,pageNo){
                     objul.id=data.data.datalist[i].id
                     //跳转至详情页
                     objul.onclick=function(){location=encodeURI('details.html?pageid=4&listid=0&appid='+this.id+'&keyword='+key)}
-                    objul.innerHTML="<li class='appico'><img src='"+data.data.datalist[i].ico+"'></li><li class='apptxt'><div class='app-title'>"+data.data.datalist[i].title+"</div><div class='app-category'>"+data.data.datalist[i].category+"</div></li><li class='appbtn'><span class='dbtn' id="+data.data.datalist[i].url+" onclick=download(this,event)>下载</span></li>"
+                    objul.innerHTML="<li class='appico'><img src='"+data.data.datalist[i].ico+"'></li><li class='apptxt'><div class='app-title'>"+data.data.datalist[i].title+"</div><div class='app-category'>"+data.data.datalist[i].catename+"</div></li><li class='appbtn'><span class='dbtn' id="+data.data.datalist[i].url+" onclick=download(this,event)>下载</span></li>"
                     obj.appendChild(objul)
                 }
 
@@ -392,7 +420,7 @@ function showsearchlist(key,pageNo){
 
         },
         error : function (data){
-             showerror()
+            //loadcode0(obj)//showerror()
         },
     })
 }
@@ -439,7 +467,7 @@ function showAppCategory(pageid,pageNo){
 
         },
         error : function (data){
-            showerror()
+            //loadcode0(obj)//showerror()
         },
     })
 
@@ -475,12 +503,10 @@ function showGameCategory(pageid,pageNo){
                 setTimeout('hideload()',50)
                 loadcode0(obj)
             }
-
-
             setTimeout('hideload()',3000)
         },
         error : function (data){
-             showerror()
+             //loadcode0(obj)//showerror()
         },
     })
 
@@ -489,7 +515,7 @@ function showGameCategory(pageid,pageNo){
 function showNav(pageid,listid){
     $.ajax({
         type: "POST",
-        url:listjson+'?id='+listid,
+        url:listjson+'?listid='+listid,
         dataType:"json",
         contentType: "application/json",
         success : function(data){
@@ -509,7 +535,7 @@ function showNav(pageid,listid){
             }
         },
         error : function (data){
-            showerror()
+            //showerror()
         },
     })
 }
@@ -518,7 +544,7 @@ function showAppList(pageid,listid,pageNo){
     var listbox=document.getElementById("thelist")
     $.ajax({
         type: "POST",
-        url:listjson+'?id='+listid+"&pageNo="+pageNo,
+        url:listjson+'?listid='+listid+"&pageNo="+pageNo,
         dataType:"json",
         contentType: "application/json",
         //alert("success==="+pageNo)
@@ -550,14 +576,85 @@ function showAppList(pageid,listid,pageNo){
 
         },
         error : function (data){
-            showerror()
+            //loadcode0(listbox)
+            //showerror()
+        },
+    })
+}
+//show recommend nav
+function showRecNav(pageid,listid){
+    $.ajax({
+        type: "POST",
+        url:recommendjson+'?listid='+listid,
+        dataType:"json",
+        contentType: "application/json",
+        success : function(data){
+            if(data.code==200){
+                var navbox=document.getElementById("nav")
+                var navul=document.createElement("ul")
+                navul.className="navtop"
+                navul.innerHTML="<li class='li1' onclick=goweb("+pageid+")>< </li><li class='li2'>"+data.data.title+"</li>"
+                navbox.appendChild(navul)
+            }else{
+                var navbox=document.getElementById("nav")
+                var navul=document.createElement("ul")
+                navul.className="navtop"
+                navul.innerHTML="<li class='li1' onclick=goweb(1)>< </li><li class='li2'>列表</li>"
+                navbox.appendChild(navul)
+
+            }
+        },
+        error : function (data){
+            //showerror()
+        },
+    })
+}
+//show Recommend list
+function showRecommedList(pageid,listid,pageNo){
+    var listbox=document.getElementById("thelist")
+    $.ajax({
+        type: "POST",
+        url:recommendjson+"?listid="+listid+"&pageNo="+pageNo,
+        dataType:"json",
+        contentType: "application/json",
+        //alert("success==="+pageNo)
+         beforeSend:function(){
+             showload(0)
+         },
+        success : function(data){
+        if (data.code==200){
+            if (pageNo>data.data.page.totalPage){
+                showload(1)
+            }else{
+            for(i=0;i<data.data.datalist.length;i++){
+                var appul=document.createElement("div")
+                appul.className="appone"
+                appul.id=data.data.datalist[i].id
+                //跳转至详情页
+                appul.onclick=function(){location='details.html?pageid='+pageid+'&listid='+listid+'&appid='+this.id}
+                appul.innerHTML="<div class='appico'><img src='"+data.data.datalist[i].ico+"'></div><div class='apptxt'><ul class='app-title'>"+data.data.datalist[i].title+"P="+pageNo+"</ul><ul class='app-category'>"+data.data.datalist[i].describe+"</ul></div><div class='appbtn'><span class='dbtn' id="+data.data.datalist[i].url+" onclick=download(this,event)>下载</span></div>"
+                listbox.appendChild(appul)
+            }
+            setTimeout('hideload()',3000)
+            }
+            //alert(getScrollHeight()+"=="+window.screen.height)
+
+        }else{
+         setTimeout('hideload()',50)
+         loadcode0(listbox)
+        }
+
+        },
+        error : function (data){
+            //loadcode0(listbox)
+            //showerror()
         },
     })
 }
 
 //show error
 function showerror(){
-    alert("error")
+    //alert("error")
 }
 //getURL
 function getURL(url){
@@ -571,7 +668,8 @@ function download(obj,evt){
         } else {
             e.stopPropagation();
         }
-        alert("download=="+obj.id)
+        ddload()
+        //alert("download=="+obj.id)
      //window.location.href='details.html'
 }
 //show load
@@ -649,7 +747,7 @@ function GetQueryString(name){
 //load code 0
 function loadcode0(obj){
     var loadingtips=document.createElement("ul")
-    loadingtips.innerHTML="<img src='img/Load_failed.png'><br/>加载失败，请稍后再试!<br/><span class='refreshbtn' onclick='location.reload()'>刷新</span>"
+    loadingtips.innerHTML="<img src='img/Load_failed.png'><br/>暂无数据!<br/>"
     loadingtips.className="loadtips"
     obj.appendChild(loadingtips)
 }
@@ -658,4 +756,25 @@ function loadcode1(obj){
     loadingtips.innerHTML="<img src='img/Load_failed2.png'>加载失败，请稍后再试!"
     loadingtips.className="loadtips1"
     obj.appendChild(loadingtips)
+}
+
+//submit download data
+
+function ddload(){
+var s=126;
+var dataJson={t0:s}
+//t0:,t1:,t2
+        //alert(dataJson)
+    $.ajax({
+        type: "POST",
+        url: ddloadurl,
+        data:"t0=126",
+        success: function(message){
+             alert( "Data Saved: " + message );
+        }
+        error: function (message) {
+            alert("loaderror")
+         }
+
+    });
 }
